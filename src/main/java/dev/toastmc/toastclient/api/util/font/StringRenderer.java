@@ -5,13 +5,11 @@ import net.minecraft.client.render.BufferBuilder;
 import net.minecraft.client.render.Tessellator;
 import net.minecraft.client.render.VertexFormats;
 import org.lwjgl.opengl.GL11;
-import org.w3c.dom.CharacterData;
 
 import java.awt.*;
 import java.awt.font.GlyphVector;
 
-public class StringRenderer
-{
+public class StringRenderer {
     /** Vertical adjustment (in pixels * 2) to string position because Minecraft uses top of string instead of baseline */
     private static final int BASELINE_OFFSET = 7;
 

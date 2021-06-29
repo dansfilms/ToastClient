@@ -29,6 +29,9 @@ dependencies {
 
     compile "com.github.QuantumClient:Energy:${project.events_version}"
     compile "com.google.guava:guava:${project.guava_version}"
+
+    implementation 'org.reflections:reflections:0.9.12'
+    include 'org.reflections:reflections:0.9.12'
 }
 
 processResources {
