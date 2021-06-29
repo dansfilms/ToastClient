@@ -1,9 +1,9 @@
 package dev.toastmc.toastclient;
 
+import dev.toastmc.toastclient.api.module.ModuleManager;
 import dev.toastmc.toastclient.api.util.font.FontAccessor;
 import dev.toastmc.toastclient.api.util.font.StringRenderer;
 import net.fabricmc.api.ModInitializer;
-import org.lwjgl.system.CallbackI;
 
 import java.util.logging.LogManager;
 import java.util.logging.Logger;
@@ -15,6 +15,8 @@ public class ToastClient implements ModInitializer {
 
     public static final String nameVersion = name + " " + version;
 
+    public static ModuleManager moduleManager;
+
     public static final Logger logger = LogManager.getLogManager().getLogger(name);
 
     @Override
@@ -23,6 +25,7 @@ public class ToastClient implements ModInitializer {
         logger.info("Started loading " + nameVersion + ".");
 
         FontAccessor.fontRenderer = new StringRenderer(18f, "/assets/toastclient/font/" + FontAccessor.fontName);
+        moduleManager = new ModuleManager();
 
         logger.info("Finished loading " + nameVersion + " in " + (System.currentTimeMillis() - start) + " millis.");
 

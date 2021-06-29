@@ -1,5 +1,7 @@
 package dev.toastmc.toastclient.api.module;
 
+import net.minecraft.client.MinecraftClient;
+
 public class Module {
 
     private String name;
@@ -9,6 +11,8 @@ public class Module {
     private boolean enabled;
 
     private int key = -1;
+
+    public MinecraftClient mc = MinecraftClient.getInstance();
 
     public Module(String name, String description, Category category) {
         super();
@@ -27,6 +31,14 @@ public class Module {
 
     public void setEnabled(boolean enabled) {
         this.enabled = enabled;
+    }
+
+    public int getKey() {
+        return key;
+    }
+
+    public void setKey(int key) {
+        this.key = key;
     }
 
     public boolean isEnabled() {
