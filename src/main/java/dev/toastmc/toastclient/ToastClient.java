@@ -1,5 +1,6 @@
 package dev.toastmc.toastclient;
 
+import com.google.common.eventbus.EventBus;
 import dev.toastmc.toastclient.api.module.ModuleManager;
 import dev.toastmc.toastclient.api.util.font.FontAccessor;
 import dev.toastmc.toastclient.api.util.font.StringRenderer;
@@ -16,6 +17,7 @@ public class ToastClient implements ModInitializer {
     public static final String nameVersion = name + " " + version;
 
     public static ModuleManager moduleManager;
+    public static EventBus eventBus;
 
     public static final Logger logger = LogManager.getLogManager().getLogger(name);
 
@@ -25,6 +27,7 @@ public class ToastClient implements ModInitializer {
         logger.info("Started loading " + nameVersion + ".");
 
         FontAccessor.fontRenderer = new StringRenderer(18f, "/assets/toastclient/font/" + FontAccessor.fontName);
+        eventBus = new EventBus();
         moduleManager = new ModuleManager();
 
         logger.info("Finished loading " + nameVersion + " in " + (System.currentTimeMillis() - start) + " millis.");
